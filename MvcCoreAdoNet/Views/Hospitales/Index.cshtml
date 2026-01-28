@@ -8,6 +8,7 @@
             <th>Nombre</th>
             <th>Dirección</th>
             <th>Teléfono</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,11 @@
                 <td>@hospital.Nombre</td>
                 <td>@hospital.Direccion</td>
                 <td>@hospital.Telefono</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Hospitales"
+                    , new { id = hospital.IdHospital }
+                    , new { @class = "btn btn-success"  })
+                </td>
             </tr>
         }
     </tbody>
