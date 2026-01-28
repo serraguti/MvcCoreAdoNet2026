@@ -22,15 +22,24 @@ asp-action="Create">New Hospital</a>
                 <td>@hospital.Direccion</td>
                 <td>@hospital.Telefono</td>
                 <td>
-                    @Html.ActionLink("Details", "Details", "Hospitales"
-                    , new { id = hospital.IdHospital }
-                    , new { @class = "btn btn-success"  })
-                    @Html.ActionLink("Update", "Edit", "Hospitales"
-                    , new { id = @hospital.IdHospital}
-                    , new { @class = "btn btn-info" })
-                    @Html.ActionLink("Delete", "Delete", "Hospitales"
-                             , new { id = @hospital.IdHospital }
-                             , new { @class = "btn btn-danger" })
+                    <a asp-controller="Hospitales"
+                        asp-action="Details"
+                        class="btn btn-success"
+                        asp-route-id="@hospital.IdHospital">
+                        Details
+                    </a>
+                    <a asp-controller="Hospitales"
+                       asp-action="Update"
+                       class="btn btn-info"
+                       asp-route-id="@hospital.IdHospital">
+                        Update
+                    </a>
+                    <a asp-controller="Hospitales"
+                       asp-action="Delete"
+                       class="btn btn-danger"
+                       asp-route-id="@hospital.IdHospital">
+                        Delete
+                    </a>
                 </td>
             </tr>
         }
